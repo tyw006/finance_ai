@@ -4,7 +4,7 @@ from crewai import Agent, Task, Crew, Process
 from langchain.agents import Tool
 from langchain_experimental.utilities import PythonREPL
 
-llm = Ollama(model="mistral")
+llm = Ollama(model="llama2")
 
 python_tool = Tool(
     name="python_tool",
