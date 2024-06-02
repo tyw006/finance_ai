@@ -41,8 +41,8 @@ embeddings = VoyageAIEmbeddings(
     model = "voyage-large-2-instruct"
 )
 
-# Connect to local docker deployed vector database
-cloud_url = "https://1074525a-2322-491c-b468-b1733cd3ce4b.us-east4-0.gcp.cloud.qdrant.io:6333"
+# Connect to local docker deployed vector database or cloud URL
+cloud_url = "qdrant url here"
 client = qdrant_client.QdrantClient(
     cloud_url,
     api_key=QDRANT_API_KEY

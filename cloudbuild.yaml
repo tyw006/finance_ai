@@ -34,15 +34,15 @@ timeout: 3600s
 
 availableSecrets:
   secretManager:
-  - versionName: projects/79854741196/secrets/TAVILY_API_KEY/versions/latest
+  - versionName: appropriate_secrets_url_here
     env: 'TAVILY_API_KEY'
-  - versionName: projects/79854741196/secrets/VOYAGE_API_KEY/versions/latest
+  - versionName: appropriate_secrets_url_here
     env: 'VOYAGE_API_KEY'
-  - versionName: projects/79854741196/secrets/GROQ_API_KEY/versions/latest
+  - versionName: appropriate_secrets_url_here
     env: 'GROQ_API_KEY'
-  - versionName: projects/79854741196/secrets/COHERE_API_KEY/versions/latest
+  - versionName: appropriate_secrets_url_here
     env: 'COHERE_API_KEY'
-  - versionName: projects/79854741196/secrets/LANGSMITH_API_KEY/versions/latest
+  - versionName: appropriate_secrets_url_here
     env: 'LANGSMITH_API_KEY'
-  - versionName: projects/79854741196/secrets/QDRANT_API_KEY/versions/latest
+  - versionName: appropriate_secrets_url_here
     env: 'QDRANT_API_KEY'
