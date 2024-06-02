@@ -1,0 +1,32 @@
+FROM python:3.11-slim
+
+RUN pip install poetry==1.6.1
+
+RUN poetry config virtualenvs.create false
+
+WORKDIR /code
+
+COPY ./pyproject.toml ./README.md ./poetry.lock* ./
+
+COPY ./package[s] ./packages
+
+RUN poetry install  --no-interaction --no-ansi --no-root
+
+# Embedding model
+ENV VOYAGE_API_KEY="YOUR-API-KEY-HERE"
+# LLM for RAG
+ENV COHERE_API_KEY="YOUR-API-KEY-HERE"
+# Web search tool
+ENV TAVILY_API_KEY="YOUR-API-KEY-HERE"
+# Cloud vector database
+ENV QDRANT_API_KEY="YOUR-API-KEY-HERE"
+# Extra LLM Judge, used for Chunk Retrieval filtering(Optional, can use cohere)
+ENV GROQ_API_KEY="YOUR-API-KEY-HERE"
+
+COPY ./app ./app
+
+COPY start.sh ./
+
+EXPOSE 8000 8501
+
+CMD ["bash", "start.sh"]
